@@ -1,25 +1,22 @@
 package ua.com.servlet_exampl;
-// Первый сервлет
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class HelloServlet extends HttpServlet {
-
+@WebServlet("/best")
+public class HelloServlet2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
 
-        resp.setContentType("text/html");
-        PrintWriter writer = resp.getWriter();
-        try {
-            writer.println("<h2>Welcome to servlets</h2>");
-        } finally {
-            writer.close();
-        }
+        // Передаём данные с Servlet на JSP
+        req.setAttribute("name", "ServletExample");
+
+        // Использование JSP
+        req.getRequestDispatcher("mypage.jsp").forward(req, resp);
     }
 }
