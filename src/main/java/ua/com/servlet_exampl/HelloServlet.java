@@ -1,7 +1,5 @@
 package ua.com.servlet_exampl;
 // Первый сервлет
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +10,7 @@ public class HelloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException, ServletException {
+            throws IOException {
 
         resp.setContentType("text/html");
         PrintWriter writer = resp.getWriter();

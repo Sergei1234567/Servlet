@@ -13,7 +13,6 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-
         PrintWriter out = resp.getWriter();
         out.print("<h1>Hello Servlet SSDD WWW</h1>");
     }
